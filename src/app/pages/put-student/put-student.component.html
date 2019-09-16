@@ -1,0 +1,29 @@
+<form [formGroup] ="studentForm">
+
+    <input
+        placeholder="id client"
+        formControlName ="id"
+    >
+
+    <div class="alert" *ngIf="id.touched && id.errors">
+        votre saisie est invalide!
+    </div>
+
+    <input
+        placeholder="status client"
+        formControlName="status"
+    >
+    <div class="alert" *ngIf="status.touched && status.errors">
+            votre saisie est invalide!
+    </div>
+
+    <button 
+        type ="submit"
+        [disabled] ="studentForm.invalid"
+        (click)="add()"
+    >
+        Valider
+    </button>
+ 
+
+</form>

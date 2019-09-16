@@ -1,0 +1,74 @@
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- id Column -->
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef style="width:100px" > id </th>
+      <td mat-cell *matCellDef="let student"> {{student.id}} </td>
+    </ng-container>
+  
+    <!-- nom Column -->
+    <ng-container matColumnDef="nom">
+      <th mat-header-cell *matHeaderCellDef style="width:100px"> nom </th>
+      <td mat-cell *matCellDef="let student"> {{student.nom}} </td>
+    </ng-container>
+  
+    <!-- prenom Column -->
+    <ng-container matColumnDef="prenom">
+      <th mat-header-cell *matHeaderCellDef style="width:100px"> prenom </th>
+      <td mat-cell *matCellDef="let student"> {{student.prenom}}</td>
+    </ng-container>
+  
+    <!-- adresse Column -->
+    <ng-container matColumnDef="adresse">
+      <th mat-header-cell *matHeaderCellDef style="width:100px"> adresse </th>
+      <td mat-cell *matCellDef="let student"> {{student.adresse}} </td>
+    </ng-container>
+
+    <!-- telephone Column -->
+    <ng-container matColumnDef="telephone">
+      <th mat-header-cell *matHeaderCellDef style="width:100px"> telephone </th>
+      <td mat-cell *matCellDef="let student"> {{student.telephone}} </td>
+    </ng-container>
+
+    <!-- commande Column -->
+    <ng-container matColumnDef="commande">
+      <th mat-header-cell *matHeaderCellDef style="width:100px"> commande </th>
+      <td mat-cell *matCellDef="let student"> {{student.commande}} </td>
+    </ng-container>
+
+    <!-- status Column -->
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef style="width:100px"> status </th>
+      <td mat-cell *matCellDef="let student"> {{student.status}} </td>
+    </ng-container>
+
+
+    <!-- button-->
+    <ng-container matColumnDef="supprimer">
+      <mat-header-cell  *matHeaderCellDef style="width:20px" ></mat-header-cell>
+      <td mat-cell *matCellDef="let student" (click)="removeStudent(student)" >
+           <button class="material-icons md-dark">delete</button>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="modifier">
+        <mat-header-cell  *matHeaderCellDef style="width:10px" ></mat-header-cell>
+        <td mat-cell *matCellDef="let student"(click)="removeStu()">
+              
+              <button class="material-icons md-dark">autorenew</button>
+              
+        </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  
+  <!-- Copyright 2019 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->
