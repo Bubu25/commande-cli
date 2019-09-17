@@ -4,8 +4,12 @@ import { AddStudentComponent } from './pages/add-student/add-student.component';
 import { ListStudentComponent } from './pages/list-student/list-student.component';
 import { GetStudentComponent } from './pages/get-student/get-student.component';
 import { PutStudentComponent } from './pages/put-student/put-student.component';
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
+  {
+    path:'',component:AppComponent
+  },
   {
     path:'commande/livreur', component:ListStudentComponent
   },
